@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row">
+  <div class="col-lg-2">
+    <img src="..\assets\logo.jpg" alt="DXP" height="88" width="248">
+  </div>
+  <div class="welcome col-lg-8">
+	Welcome to the DXP Demo VM
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<div class="row">
+  <div class="col-lg-1">
+    <div class="versionBox">
+  	  Version {{version?.version}}
+  	</div>
+  </div>
+    <div class="col-lg-11 infoBox">
+      Welcome to the Fujitsu DXP demo environment. Below you will find all links to access the Fujitsu DXP application(s) and any other tools installed.
+      Please click the link of your choice, which will open a new window / tab in your browser. (The username / password
+      for each section is shown in brackets next to the link.)
+    </div>
+</div>
+<div class="row">
+	<nav class="col-lg-1">
+		<br>
+		<a routerLink="/dashboard">Home</a><br><br>
+  		<a routerLink="/application">Application Info</a><br><br><br>
+  		<div *ngIf="status" class="systemBox">
+  		  <b>&nbsp;System status</b><br><br>
+  		  <div *ngIf="appinstall?.jboss === 'true'">
+  		  	<div *ngIf="appversions?.database.includes('PostgresAS')" class="statusBox" [ngStyle]="{'border-color':status.database === 'Running' ? 'green' : 'red' }">
+  		  	  PostgresAS
+  		 	</div>
+  		 	<div *ngIf="appversions?.database.includes('Oracle')" class="statusBox" [ngStyle]="{'border-color':status.database === 'Running' ? 'green' : 'red' }">
+  		  	  Oracle
+  		 	</div>
+  		  </div>
+  		  <div *ngIf="appinstall?.flowable === 'true'" class="statusBox" [ngStyle]="{'border-color':status.databaseflow === 'Running' ? 'green' : 'red' }">
+  		    Postgres
+  		  </div>
+  		  <div *ngIf="appinstall?.jboss === 'true'" class="statusBox" [ngStyle]="{'border-color':status.jbossibpm === 'Running' ? 'green' : 'red' }">
+  		    JBoss
+  		  </div>
+  		  <div *ngIf="appinstall?.flowable === 'true'" class="statusBox" [ngStyle]="{'border-color':status.tomcat === 'Running' ? 'green' : 'red' }">
+  		    Tomcat
+  		  </div>
+  		  <div *ngIf="appinstall?.es === 'true'" class="statusBox" [ngStyle]="{'border-color':status.elasticsearch === 'Running' ? 'green' : 'red' }">
+  		    Elastic
+  		  </div>
+  		  <div *ngIf="appinstall?.alfresco === 'true'" class="statusBox" [ngStyle]="{'border-color':status.alfresco === 'Running' ? 'green' : 'red' }">
+  		    Alfresco
+  		  </div>
+  		  <div *ngIf="appinstall?.nginx === 'true'" class="statusBox" [ngStyle]="{'border-color':status.nginx === 'Running' ? 'green' : 'red' }">
+  		    Nginx
+  		  </div>
+  		</div>
+	</nav>
+	<div class="col-lg-11">
+		<router-outlet></router-outlet>
+	</div>
+</div>

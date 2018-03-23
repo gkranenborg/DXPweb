@@ -1,0 +1,85 @@
+<div class="urlBox">
+  <div class="urltitle">
+      Application overview
+  </div>
+  <div>
+  	<table class="table table-condensed table-bordered">
+		<tr>
+			<th>Installation date :</th>
+			<th>{{appversions?.installdate}}</th>
+		</tr>
+		<tr>
+			<th>Script version :</th>
+			<th>{{appversions?.script}}</th>
+		</tr>
+		<tr>
+			<th>VM version :</th>
+			<th>{{appversions?.vmversion}}</th>
+		</tr>
+		<tr>
+			<th>O.S. version :</th>
+			<th>{{appversions?.osversion}}</th>
+		</tr>
+		<tr>
+			<th>JDK 8 :</th>
+			<th>{{appversions?.jdk8}}</th>
+		</tr>
+		<tr>
+			<th>Database :</th>
+			<th>{{appversions?.database}}</th>
+		</tr>
+		<tr *ngIf="appversions?.jboss !== 'not installed'">
+			<th>JBoss :</th>
+			<th>{{appversions?.jboss}}</th>
+		</tr>
+		<tr *ngIf="appversions?.ibpm !== 'not installed'">
+			<th>Interstage BPM :</th>
+			<th>{{appversions?.ibpm}}</th>
+		</tr>
+		<tr *ngIf="appversions?.ibpm !== 'not installed'">
+			<th>Elastic Search :</th>
+			<th>{{appversions?.es}}</th>
+		</tr>
+		<tr>
+			<th>Chat :</th>
+			<th>{{appversions?.chat}}</th>
+		</tr>
+		<tr *ngIf="appversions?.rea === 'not installed'">
+			<th>Agile Adapter :</th>
+			<th>{{appversions?.aa}}</th>
+		</tr>
+		<tr *ngIf="appversions?.jboss !== 'not installed'">
+			<th>PostHoc :</th>
+			<th>{{appversions?.email}}</th>
+		</tr>
+		<tr *ngIf="appversions?.ibpm !== 'not installed'">
+			<th>SSOFI :</th>
+			<th>{{appversions?.ssofi}}</th>
+		</tr>
+		<tr *ngIf="appversions?.ibpm !== 'not installed'">
+			<th>BAL Library :</th>
+			<th>{{appversions?.ballib}}</th>
+		</tr>
+		<tr *ngIf="appversions?.alfresco !== 'not installed'">
+			<th>Alfresco :</th>
+			<th>{{appversions?.alfresco}}</th>
+		</tr>
+		<tr *ngIf="appversions?.flowable !== 'not installed'">
+			<th>Flowable :</th>
+			<th>{{appversions?.flowable}}</th>
+		</tr>
+		<tr *ngIf="appversions?.tomcat !== 'not installed'">
+			<th>Tomcat :</th>
+			<th>{{appversions?.tomcat}}</th>
+		</tr>
+		<tr *ngIf="appversions?.rea !== 'not installed'">
+			<th>REA :</th>
+			<th>{{appversions?.rea}}</th>
+		</tr>
+		<tr *ngIf="appversions?.nginx !== 'not installed'">
+			<th>nginx :</th>
+			<th>{{appversions?.nginx}}</th>
+		</tr>
+	</table>
+   </div>
+</div>

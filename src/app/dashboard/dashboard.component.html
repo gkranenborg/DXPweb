@@ -1,0 +1,54 @@
+<div class="row">
+  <div *ngIf="appinstall?.jboss === 'true' || appinstall?.flowable === 'true'" class="urlBox col-lg-6">
+    <div class="urltitle">
+      DXP Enterprise
+    </div>
+    <div class="row">
+      <div *ngIf="appinstall?.ibpm === 'true'" class="col-lg-7">
+        <a href="{{baseurl}}49950/console/default/getDashboard.page" target="_blank">Interstage BPM console</a> (admin / Fujitsu1)<br><br>
+        <a href="{{baseurl}}49950/console/TenantManager.page" target="_blank">Interstage BPM Tenant Manager</a> (admin / Fujitsu1)<br><br>
+      </div>
+      <div *ngIf="!browser && appinstall?.ibpm === 'true'" class="col-lg-4">
+        <div class="warningBox">
+          Please use Internet Explorer to access Interstage-BPM !
+        </div>
+      </div>
+    </div>
+    <a href="{{baseurl}}49950/aa" target="_blank">DXP Monitor</a><br><br>
+    <div *ngIf="appinstall?.alfresco === 'true'"><a href="{{baseurl}}8080/share/page" target="_blank">Alfresco</a>(admin / Fujitsu1)<br><br></div>
+    <div *ngIf="appinstall?.jboss === 'true'"><a href="{{baseurl}}9990/" target="_blank">JBoss console</a> (admin/Fujitsu.1)<br><br></div>
+    <div *ngIf="appinstall?.jboss === 'true'"><a href="{{baseurl}}49950/ssofi/" target="_blank" >SSOFI ID Provider</a></div>
+  </div>
+  <div class="col-lg-1"></div>
+  <div *ngIf="appinstall?.flowable === 'true'" class="urlBox col-lg-6">
+    <div class="urltitle">
+     DXP Community
+    </div>
+      <a href="{{baseurl}}8080/flowable-modeler" target="_blank">Flowable Modeler</a> (admin / test)<br><br>
+	  <a href="{{baseurl}}8080/flowable-task" target="_blank">Flowable Task</a> (admin / test)<br><br>
+	  <a href="{{baseurl}}8080/flowable-rest/service/management/engine" target="_blank">Flowable REST</a> (kermit / kermit)<br><br>
+	  <a href="{{baseurl}}8080/flowable-idm" target="_blank">Flowable IDM</a> (admin / test)<br><br>
+	  <a href="{{baseurl}}8080/flowable-admin" target="_blank">Flowable Admin</a> (admin / test)
+  </div>
+  <div *ngIf="appinstall?.rea === 'true'" class="urlBox col-lg-6">
+    <div class="urltitle">
+     DXP Lite
+    </div>
+    <a href="{{baseurl}}81/ui3/#/dashboard" target="_blank">DXP REA.</a> (demo / Fujitsu1)<br><br>
+  </div>
+</div>
+<div class="row">
+  <div class=" urlBox col-lg-6">
+    <div class="urltitle">
+      Tools
+    </div>
+    <a href="{{baseurl}}49950/posthoc" target="_blank">E-mail</a><br><br>
+    <a href="{{baseurl}}49950/aa/perfTest.html" target="_blank" >Performance test</a><br><br>
+    <a *ngIf="appinstall?.es == 'true'" href="{{baseurl}}9100" target="_blank">Elastic Search</a><br><br>
+    Please enter your name below and click the 'Chat' button :<br>
+    <input [(ngModel)]="chatname" #ctrl="ngModel" required/> <a href="{{baseurl}}3000/chat.html?user={{chatname}}" class="btn btn-default" target="_blank">Chat</a>
+  </div>
+</div>
+<div class="license">
+   This VM is licensed for development and test use only to specific partners of Fujitsu America.  While it is expected to perform suitably for development of BPM applications and to test in single user scenarios, this VM is configured in a way that limits its usefulness in production and multi-user scenarios.  Performance and scalability testing should be done only on a suitably configured Interstage BPM installation.  Use of this VM for a production application is neither allowed nor recommended.  For more information please contact InterstageSupport@us.fujitsu.com 
+</div>
